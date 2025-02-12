@@ -182,3 +182,29 @@ from Netflix
 	where Director is null
 ```
 Objective: List content that does not have a director.
+
+# 13. Find How Many Movies Actor 'Salman Khan' Appeared in the Last 10 Years
+```sql
+select
+	*
+from Netflix
+	where 
+		casts ilike '%Salman Khan%'
+		and
+		release_year >= extract(year from Current_date) - 10
+```
+Objective: Count the number of movies featuring 'Salman Khan' in the last 10 years.
+
+# 14. Find the Top 10 Actors Who Have Appeared in the Highest Number of Movies Produced in India.
+```sql
+select
+	unnest(string_to_array(casts, ',')) as Actors,
+	count(*)
+from Netflix
+where country ilike '%India%'
+group by 1
+order by 2 desc
+limit 10
+```
+Objective: Identify the top 10 actors with the most appearances in Indian-produced movies.
+
