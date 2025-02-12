@@ -44,3 +44,6 @@ select
 from  Netflix 
 group by 1
 ```
+Objective: Determine the distribution of content types on Netflix.
+
+## 2. 
