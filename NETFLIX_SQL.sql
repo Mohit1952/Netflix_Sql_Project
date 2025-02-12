@@ -1,19 +1,7 @@
--- Netflix Project
-Create table Netflix
-(
-	show_id			Varchar(5),
-	type			Varchar(10),
-	title			Varchar(250),
-	director		Varchar(550),
-	casts			Varchar(1050),
-	country			Varchar(550),
-	date_added		Varchar(55),
-	release_year	int,
-	rating			Varchar(15),
-	duration		Varchar(15),
-	listed_in		Varchar(250),
-	description		Varchar(550)
-)
+-- Netflix Data Analysis using SQL
+-- Solutions of 14 business problems
+
+
 
 -- 1. Count the number of Movies vs TV Shows
 select type, count(*) 
