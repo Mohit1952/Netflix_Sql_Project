@@ -135,6 +135,15 @@ from Netflix
 		release_year >= extract(year from Current_date) - 10
 
 
+-- 14. Find the top 10 actors who have appeared in the highest number of movies produced in India.
+select
+	unnest(string_to_array(casts, ',')) as Actors,
+	count(*)
+from Netflix
+where country ilike '%India%'
+group by 1
+order by 2 desc
+limit 10
 
 
 
